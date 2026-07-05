@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply w-full bg-background border border-border rounded-lg px-3 py-2 text-base text-text;
+  }
+}
+
+:root {
+  --color-background: 243 244 246;
+  --color-card: 255 255 255;
+  --color-border: 226 228 232;
+  --color-primary: 42 61 102;
+  --color-accent: 47 111 78;
+  --color-warning: 217 164 65;
+  --color-danger: 214 69 80;
+  --color-text: 31 41 55;
+  --color-muted: 107 114 128;
+}
+
+[data-theme='dark'] {
+  --color-background: 18 18 21;
+  --color-card: 39 39 42;
+  --color-border: 63 63 70;
+  --color-primary: 113 113 122;
+  --color-accent: 103 211 156;
+  --color-warning: 242 201 76;
+  --color-danger: 255 122 132;
+  --color-text: 244 244 245;
+  --color-muted: 161 161 170;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text));
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html {
+  color-scheme: dark;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* subtle scrollbar for a cleaner feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #E2E4E8;
+  border-radius: 8px;
+}
